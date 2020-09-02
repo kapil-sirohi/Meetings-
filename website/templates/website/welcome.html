@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE Html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>welcome</title>
+        <link rel="stylesheet" href="{% static 'website/style.css' %}">
+    </head>
+    <body>
+            <h1>This is a meeting planner! your meetings our responsibilty</h1>
+            <p>this is a demo application for the course
+                <em>Djagno:getting started</em>
+                <br />
+            <h2>Meetings</h2>
+
+            <img src="{% static 'website/sattic.jpg'%}" width="100px" />
+            <ul>
+                {% for meeting in meetings %}
+                    <li>
+                        <a href="{% url 'detail' meeting.id %}">
+                            {{meeting.title}}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'rooms' %}"> room detail </a>
+            <br />
+    <a href="{% url 'new' %}"> create new meeting </a>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>new</title>
+    <link rel="stylesheet" href="{% static 'website/style.css' %}">
+</head>
+<body>
+        <h1>plan a new meeting</h1>
+        <form method="post">
+            <table>
+                {{ form }}
+            </table>
+            {% csrf_token %}
+            <button type="submit">create</button>
+        </form>
+
+
+</body>
+</html>
